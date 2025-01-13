@@ -14,7 +14,7 @@ This project is an introduction to Python programming. It focuses on Python basi
 ### 0. Hello, print
 >Write a Python script that prints exactly *"Programming is like building a multilingual puzzle*, followed by a new line.  
 
-File: 2-print.py
+File: [2-print.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/2-print.py)
 
 ### 1. Print integer
 > Complete [this source code](https://github.com/hs-hq/0x00.py/blob/main/3-print_number.py) in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.  
