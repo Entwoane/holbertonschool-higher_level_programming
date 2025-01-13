@@ -25,7 +25,7 @@ File: [2-print.py](https://github.com/Entwoane/holbertonschool-higher_level_prog
     -Your code must be *3 lines long*  
     -You have to use *f-strings*  
 
-File: 3-print_number.py
+File: [3-print_number.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/3-print_number.py)
 
 ### 2. Print Float
 > Complete [the source code](https://github.com/hs-hq/0x00.py/blob/main/4-print_float.py) in order to print the float stored in the variable **number** with a precision of 2 digits.
@@ -35,7 +35,7 @@ File: 3-print_number.py
     -You are not allowed to cast **number** to string  
     -You have to use *f-strings*
 
-File:  4-print_float.py
+File: [4-print_float.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/4-print_float.py)
 
 ### 3. Print String
 > Complete [this source code](https://github.com/hs-hq/0x00.py/blob/main/5-print_string.py) in order to print 3 times a string stored in the variable **str**, followed by its first 9 characters.  
@@ -47,7 +47,7 @@ File:  4-print_float.py
     -You are not allowed to use any loops or conditional statement  
     -Your program should be **maximum** *5 lines long*
 
-File: 5-print_string.py
+File: [5-print_string.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/5-print_string.py)
 
 ### 4. Play with strings
 > Complete [this source code](https://github.com/hs-hq/0x00.py/blob/main/6-concat.py) to print *Welcome to Holberton School!*    
@@ -55,7 +55,7 @@ File: 5-print_string.py
     -You have to use the variables **str1** and **str2** in your new line of code  
     -Your program should be exactly *5 lines long* 
 
-File: 6-concat.py
+File: [6-concat.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/6-concat.py)
 
 ### 5. Copy - Cut - Paste
 > Complete [this source code](https://github.com/hs-hq/0x00.py/blob/main/7-edges.py)  
@@ -65,7 +65,7 @@ File: 6-concat.py
     -**word_last_2** should contain the last 2 letters of the variable word  
     -**middle_word** should contain the value of the variable word without the first and last letters
 
-File: 7-edges.py
+File: [7-edges.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/7-edges.py)
 
 ### 6. Create a new sentence
 > Complete [this source code](https://github.com/hs-hq/0x00.py/blob/main/8-concat_edges.py) to print **object-oriented programming with Python**, followed by a new line.  
@@ -74,10 +74,10 @@ File: 7-edges.py
     -You are not allowed to create new variables  
     -You are not allowed to use string literals  
 
-File: 8-concat_edges.py
+File: [8-concat_edges.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/8-concat-edges.py)
 
 ### 7. Easter Egg
 > Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
     Your script should be maximum 98 characters long (check with wc -m 9-easter_egg.py)
 
-File: 9-easter_egg.py
+File: [9-easter_egg.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/9-easter_egg.py)
