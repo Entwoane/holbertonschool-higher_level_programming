@@ -1,10 +1,9 @@
-# <p style="text-align: center"> Python - Hello World </p>
+# Python - Hello World
+
 
 ## 🐍Starting Python🐍
 
-<div style="text-align: center;">
-<img src="https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/asset/pngwing.com.png" width="50%" height="50%">  
-</div>
+<img src="https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-hello_world/asset/pngwing.com.png" width="50%" height="50%">  |
 
 ---
 
