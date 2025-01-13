@@ -76,5 +76,8 @@ File: 7-edges.py
 
 File: 8-concat_edges.py
 
+### 7. Easter Egg
+> Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
+    Your script should be maximum 98 characters long (check with wc -m 9-easter_egg.py)
 
-[def]: g:\Documents\Prog\Python\Assets\pngwing.com.png
+File: 9-easter_egg.py
