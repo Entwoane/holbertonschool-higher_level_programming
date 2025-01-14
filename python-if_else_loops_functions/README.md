@@ -58,3 +58,22 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 - You are not allowed to import any module
 
 File: [3-print_alphabt.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/3-print_alphabt.py)
+
+### 4. Hexadecimal printing
+
+Write a program that prints all numbers from 0 to 98 in decimal and in hexadecimal (as in the following example)
+
+- You can only use one print function with string format
+- You can only use one loop in your code
+- You are not allowed to store numbers or strings in a variable
+- You are not allowed to import any module
+
+> 0 = 0x0  
+> 1 = 0x1  
+> 2 = 0x2  
+> 3 = 0x3  
+> ...  
+> 97 = 0x61  
+> 98 = 0x62  
+
+File: [4-print_hexa.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/4-print_hexa.py)
