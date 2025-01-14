@@ -45,3 +45,16 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 - You are not allowed to import any module
 
 File: [2-print_alphabet.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/2-print_alphabet.py)
+
+
+### 3. When I was having that alphabet soup, I never thought that it would pay off
+
+Write a program that prints the ASCII alphabet, in lowercase, not followed by a new line.  
+
+- Print all the letters except **q** and **e**
+- You can only use one *print* function with string format
+- You can only use one loop in your code
+- You are not allowed to store characters in a variable
+- You are not allowed to import any module
+
+File: [3-print_alphabt.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/3-print_alphabt.py)
