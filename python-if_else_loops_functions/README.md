@@ -181,3 +181,25 @@ Write a function that prints the numbers from 1 to 100 separated by a space.
 File: [12-fizzbuzz.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/12-fizzbuzz.py)
 
 ## ADVANCED TASKS
+
+These tasks are not mandatory
+
+### 13. Smile in the mirror
+
+Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+
+   -  You can only use one *print* function with string format
+   -  You can only use one loop in your code
+   -  You are not allowed to store characters in a variable
+   -  You are not allowed to import any module
+
+File: [100-print_tebahpla.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/100-print_tebahpla.py)
+
+### 14. Remove at position
+
+Write a function that creates a copy of the string, removing the character at the position *n* (not the Python way, the “C array index”).
+
+   - Prototype: **def remove_char_at(str, n):**
+   - You are not allowed to import any module
+
+File: [101-remove_char_at.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-if_else_loops_functions/101-remove_char_at.py)
