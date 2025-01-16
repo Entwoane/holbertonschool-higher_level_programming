@@ -19,7 +19,7 @@ Write a program that imports the function **def add(a, b):** from the file add_0
 - You are not allowed to use **\*** for importing or *\_\_import__*
 - Your code should not be executed when imported - by using *\_\_import__*
 
-File: 0-add.py
+File: [0-add.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-import_modules/0-add.py)
 
 ### 1. My first toolbox!
 
@@ -36,7 +36,7 @@ Write a program that imports functions from the file **calculator_1.py**, does s
 - You are not allowed to use **\*** for importing or *\_\_import__*
 - Your code should not be executed when imported
 
-File: 1-calculation.py
+File: [1-calculation.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-import_modules/1-calculation.py)
 
 
 ### 2. How to make a script dynamic!
@@ -53,7 +53,7 @@ Write a program that prints the number of and the list of its arguments.
 - The number of elements of **argv** can be retrieved by using: **len(argv)**
 - You do not have to fully understand lists yet, but imagine that **argv** can be used just like a C array: you can use an index to walk through it. There are other- ways (which will be preferred for future project tasks), if you know them you can use them.
 
-File: 2-args.py
+File: [2-args.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-import_modules/2-args.py)
 
 ### 3. Infinite addition
 
@@ -64,7 +64,7 @@ Write a program that prints the result of the addition of all arguments
 - Your code should not be executed when imported
 - Last but not least, your program should also handle big numbers.
 
-File: 3-infinite_add.py
+File: [3-infinite_add.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-import_modules/3-infinite_add.py)
 
 ### 4. Who are you?
 
@@ -83,4 +83,4 @@ Write a program that imports the variable **a** from the file **variable_load_5.
 - You are not allowed to use **\*** for importing or *\_\_import__*
 - Your code should not be executed when imported
 
-File: 5-variable_load.py
+File: [5-variable_load.py](https://github.com/Entwoane/holbertonschool-higher_level_programming/blob/main/python-import_modules/5-variable_load.py)
