@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(*map(chr, range(ord('A'), ord('Z') + 1)), sep='')
+import builtins
+print(*map(builtins.chr, range(65, 91)), sep='')
