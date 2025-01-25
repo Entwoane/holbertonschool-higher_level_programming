@@ -18,8 +18,11 @@ def matrix_divided(matrix, div):
         TypeError: if div is not a number (int or float)
         ZeroDivisionError: if div equal 0
     """
-    if not matrix or not (isinstance(matrix, list) or
-                          not all(isinstance(row, list) for row in matrix)):
+    if not matrix or not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
+
+    if not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of "
                         "integers/floats")
 
