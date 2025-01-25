@@ -47,6 +47,11 @@ Very large square (test performance, check no errors):
     >>> print_square(100)
     >>> sys.stdout = original_stdout
 
+Missing argument:
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
 Error Cases:
 
 Non-integer inputs:
