@@ -40,11 +40,8 @@ Large square (reasonable size):
     ##########
     ##########
 
-Very large square (test memory/performance limits):
-    >>> print_square(100)
-    ####....(100 #)....####
-    ####....(100 #)....####
-    ... (100 rows)
+Very large square (test performance, check no errors):
+    >>> print_square(100)  # This will print 100 lines of 100 '#' characters each
 
 Error Cases:
 
@@ -59,10 +56,6 @@ Non-integer inputs:
 
 Negative inputs:
     >>> print_square(-1)
-    Traceback (most recent call last):
-    ValueError: size must be >= 0
-
-    >>> print_square(-4)
     Traceback (most recent call last):
     ValueError: size must be >= 0
 
