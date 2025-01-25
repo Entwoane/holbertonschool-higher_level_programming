@@ -17,7 +17,7 @@ def print_square(size):
         ValueError: if size is less than 0
         TypeError: if size is a float and less than 0
     """
-    if not isinstance(size, int):
+    if type(size) is bool or not isinstance(size, int):
         raise TypeError("size must be an integer")
 
     if size < 0:
