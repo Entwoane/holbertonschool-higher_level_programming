@@ -40,4 +40,4 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    return [[0.0 if div == float else round(element / div, 2) for element in row] for row in matrix]
+    return [[round(element / div, 2) for element in row] for row in matrix]
