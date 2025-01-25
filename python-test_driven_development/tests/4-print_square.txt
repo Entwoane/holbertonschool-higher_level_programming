@@ -1,0 +1,85 @@
+The ``print_square`` function
+=============================
+
+Using ``print_square``
+----------------------
+
+Import the function:
+    >>> print_square = __import__('4-print_square').print_square
+
+Basic usage:
+    >>> print_square(2)
+    ##
+    ##
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Edge Cases:
+
+Zero size square:
+    >>> print_square(0)
+
+Single character square:
+    >>> print_square(1)
+    #
+
+Large square (reasonable size):
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+Very large square (test memory/performance limits):
+    >>> print_square(100)
+    ####....(100 #)....####
+    ####....(100 #)....####
+    ... (100 rows)
+
+Error Cases:
+
+Non-integer inputs:
+    >>> print_square("4")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(4.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Negative inputs:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print_square(-4)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Float inputs:
+    >>> print_square(-4.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Special inputs:
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(True)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(False)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
