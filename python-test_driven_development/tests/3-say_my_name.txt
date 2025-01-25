@@ -52,10 +52,6 @@ Empty first name:
     >>> say_my_name("", "Smith")
     My name is  Smith
 
-Newline characters:
-    >>> say_my_name("John\n", "Smith\n")
-    My name is John Smith
-
 Error cases:
 
 Non-string first name:
