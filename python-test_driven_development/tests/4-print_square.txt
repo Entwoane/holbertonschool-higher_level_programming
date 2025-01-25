@@ -41,7 +41,11 @@ Large square (reasonable size):
     ##########
 
 Very large square (test performance, check no errors):
-    >>> print_square(100)  # This will print 100 lines of 100 '#' characters each
+    >>> import sys
+    >>> original_stdout = sys.stdout
+    >>> sys.stdout = open('/dev/null', 'w')
+    >>> print_square(100)
+    >>> sys.stdout = original_stdout
 
 Error Cases:
 
