@@ -32,4 +32,7 @@ def text_indentation(text):
     if currentline:
         result.append(currentline.strip())
 
+    if text and text[-1] in special_chars:
+        result.append("")
+
     print('\n'.join(result), end='')
