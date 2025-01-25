@@ -1,0 +1,174 @@
+The ``text_indentation`` function
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+Import the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Basic Scenarios:
+    >>> text_indentation("Hello. World: How are you? Fine.")
+    Hello.
+
+    World:
+
+    How are you?
+
+    Fine.
+
+Single Delimiter Cases:
+    >>> text_indentation("Hello.")
+    Hello.
+
+    >>> text_indentation("World:")
+    World:
+
+    >>> text_indentation("Test?")
+    Test?
+
+Multiple Delimiters:
+    >>> text_indentation("Hello. World: Test? Great.")
+    Hello.
+
+    World:
+
+    Test?
+
+    Great.
+
+Whitespace Handling:
+    >>> text_indentation("  Hello.   World:    Test?  ")
+    Hello.
+
+    World:
+
+    Test?
+
+Empty Inputs:
+    >>> text_indentation("")
+
+    >>> text_indentation(" ")
+
+Consecutive Delimiters:
+    >>> text_indentation("Hello...World:::Test???")
+    Hello.
+
+    .
+
+    .
+
+    World:
+
+    :
+
+    :
+
+    Test?
+
+    ?
+
+    ?
+
+Mixed Delimiters:
+    >>> text_indentation("Start. Middle: End?")
+    Start.
+
+    Middle:
+
+    End?
+
+No Space After Delimiter:
+    >>> text_indentation("Hello.World:Test?Fine.")
+    Hello.
+
+    World:
+
+    Test?
+
+    Fine.
+
+Long Text:
+    >>> text_indentation("A" * 1000 + ". " + "B" * 1000 + "?")
+    AAAA....(1000 A's)....
+    
+    BBBB....(1000 B's)....?
+
+Punctuation Variations:
+    >>> text_indentation("First line. Second line: Third line?")
+    First line.
+
+    Second line:
+
+    Third line?
+
+Special Whitespace:
+    >>> text_indentation("\tHello. \nWorld:\tTest?")
+    Hello.
+
+    World:
+
+    Test?
+
+Unicode Handling:
+    >>> text_indentation("Hello！ World？ Test：")
+    Hello！ World？ Test：
+
+Error Cases:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Nested Punctuation:
+    >>> text_indentation("Hello... World: Test? Fine.")
+    Hello.
+
+    .
+
+    .
+
+    World:
+
+    Test?
+
+    Fine.
+
+Complex Scenarios:
+    >>> text_indentation("  Trailing spaces.   More text:   Final test?  ")
+    Trailing spaces.
+
+    More text:
+
+    Final test?
+
+Punctuation at Start/End:
+    >>> text_indentation(". Hello world :")
+    .
+
+    Hello world:
+
+Multiple Spaces:
+    >>> text_indentation("Hello.   World:    Test?")
+    Hello.
+
+    World:
+
+    Test?
+
+Repeated Delimiters:
+    >>> text_indentation("Hello.:World?:")
+    Hello.
+
+    :
+
+    World?
+
+    :
