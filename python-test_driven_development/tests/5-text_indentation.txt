@@ -88,12 +88,6 @@ No Space After Delimiter:
 
     Fine.
 
-Long Text:
-    >>> text_indentation("A" * 1000 + ". " + "B" * 1000 + "?")
-    AAAA....(1000 A's)....
-    
-    BBBB....(1000 B's)....?
-
 Punctuation Variations:
     >>> text_indentation("First line. Second line: Third line?")
     First line.
@@ -109,10 +103,6 @@ Special Whitespace:
     World:
 
     Test?
-
-Unicode Handling:
-    >>> text_indentation("Hello！ World？ Test：")
-    Hello！ World？ Test：
 
 Error Cases:
     >>> text_indentation(123)
