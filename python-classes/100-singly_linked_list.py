@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module for defining and working with singly linked list"""
+
 
 class Node:
 
