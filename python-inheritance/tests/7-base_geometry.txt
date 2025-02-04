@@ -1,0 +1,48 @@
+# Test 1: Calling area() method
+Input:
+    geometry = BaseGeometry()
+    geometry.area()
+Expected Output:
+    Exception: area() is not implemented
+
+# Test 2: Validating a positive integer with integer_validator
+Input:
+    geometry.integer_validator("side", 5)
+Expected Output:
+    No output (valid case)
+
+# Test 3: Validating a negative integer with integer_validator
+Input:
+    geometry.integer_validator("side", -5)
+Expected Output:
+    Exception: side must be greater than 0
+
+# Test 4: Validating zero with integer_validator
+Input:
+    geometry.integer_validator("side", 0)
+Expected Output:
+    Exception: side must be greater than 0
+
+# Test 5: Validating a string instead of an integer
+Input:
+    geometry.integer_validator("side", "5")
+Expected Output:
+    Exception: side must be an integer
+
+# Test 6: Validating a float instead of an integer
+Input:
+    geometry.integer_validator("side", 3.14)
+Expected Output:
+    Exception: side must be an integer
+
+# Test 7: Validating a boolean instead of an integer
+Input:
+    geometry.integer_validator("side", True)
+Expected Output:
+    Exception: side must be an integer
+
+# Test 8: Validating with name as a string and value as a valid positive integer
+Input:
+    geometry.integer_validator("length", 10)
+Expected Output:
+    No output (valid case)
