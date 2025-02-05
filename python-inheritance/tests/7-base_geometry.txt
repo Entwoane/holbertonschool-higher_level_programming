@@ -126,4 +126,4 @@ Test class instantiation:
 Test name validation:
     >>> bg.integer_validator(None, 1)
     >>> bg.integer_validator(123, 1)
-    >>> bg.integer_validator("", 1)
+    >>> bg.integer_validator("", 1) 
