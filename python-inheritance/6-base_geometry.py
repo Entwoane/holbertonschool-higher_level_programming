@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Module to create ans work with BaseGeometry"""
 
 
