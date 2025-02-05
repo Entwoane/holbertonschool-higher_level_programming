@@ -1,48 +1,62 @@
-# Test 1: Calling area() method
-Input:
-    geometry = BaseGeometry()
-    geometry.area()
-Expected Output:
-    Exception: area() is not implemented
+Test Case 1: Attempting to call the `area` method
+>>> from base_geometry import BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
 
-# Test 2: Validating a positive integer with integer_validator
-Input:
-    geometry.integer_validator("side", 5)
-Expected Output:
-    No output (valid case)
+Test Case 2: Validating a positive integer with `integer_validator`
+>>> bg.integer_validator("width", 5)  # Valid input
+>>> bg.integer_validator("height", 10)  # Valid input
 
-# Test 3: Validating a negative integer with integer_validator
-Input:
-    geometry.integer_validator("side", -5)
-Expected Output:
-    Exception: side must be greater than 0
+Test Case 3: Passing a non-integer value to `integer_validator`
+>>> bg.integer_validator("width", "5")
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
 
-# Test 4: Validating zero with integer_validator
-Input:
-    geometry.integer_validator("side", 0)
-Expected Output:
-    Exception: side must be greater than 0
+Test Case 4: Passing a negative integer to `integer_validator`
+>>> bg.integer_validator("width", -3)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
 
-# Test 5: Validating a string instead of an integer
-Input:
-    geometry.integer_validator("side", "5")
-Expected Output:
-    Exception: side must be an integer
+Test Case 5: Passing zero to `integer_validator`
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
 
-# Test 6: Validating a float instead of an integer
-Input:
-    geometry.integer_validator("side", 3.14)
-Expected Output:
-    Exception: side must be an integer
+Test Case 6: Passing a floating-point number to `integer_validator`
+>>> bg.integer_validator("width", 5.5)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
 
-# Test 7: Validating a boolean instead of an integer
-Input:
-    geometry.integer_validator("side", True)
-Expected Output:
-    Exception: side must be an integer
+Test Case 7: Passing a boolean value to `integer_validator`
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
 
-# Test 8: Validating with name as a string and value as a valid positive integer
-Input:
-    geometry.integer_validator("length", 10)
-Expected Output:
-    No output (valid case)
+Test Case 8: Passing a very large integer to `integer_validator`
+>>> bg.integer_validator("width", 10**100)  # Valid input
+
+Test Case 9: Passing a negative floating-point number to `integer_validator`
+>>> bg.integer_validator("width", -5.5)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+Test Case 10: Missing arguments for `integer_validator`
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test Case 11: Missing one argument for `integer_validator`
+>>> bg.integer_validator("width")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
