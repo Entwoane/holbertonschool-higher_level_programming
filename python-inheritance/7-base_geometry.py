@@ -3,7 +3,16 @@
 
 
 class BaseGeometry:
-    """A base class for geometry-related operations.
+    """
+    A base class for geometry-related operations.
+
+    This class serves as a blueprint for creating geometry-related classes. It includes:
+    - An `area` method that is intended to be overridden by subclasses.
+    - An `integer_validator` method to validate positive integer values.
+
+    Methods:
+        - area(self): Raises an exception indicating that the method is not implemented.
+        - integer_validator(self, name, value): Validates that the given value is a positive integer.
     """
     def area(self):
         """
