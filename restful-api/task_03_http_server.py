@@ -5,8 +5,6 @@ A simple HTTP server implementing a basic API.
 import http.server
 import json
 
-PORT = 8000
-
 
 class HTTPRequest(http.server.BaseHTTPRequestHandler):
     """
