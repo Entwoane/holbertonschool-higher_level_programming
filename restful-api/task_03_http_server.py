@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """A simple HTTP server implementing a basic API."""
 import http.server
-import requests
 import json
 
 PORT = 8000
@@ -11,8 +10,17 @@ class HTTPRequest(http.server.BaseHTTPRequestHandler):
     """Handle HTTP requests for the API."""
     def do_GET(self):
         """Process GET requests and return appropriate responses."""
-        if self.path == '/data':
-            dataset = {"name": "John", "age": 30, "city": "New York"}
+        if self.path == '/':
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+        elif self.path == '/data':
+            dataset = {
+                "name": "John",
+                "age": 30,
+                "city": "New York"
+            }
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
@@ -27,14 +35,11 @@ class HTTPRequest(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            info_msg = {"version": "1.0",
-                        "description": "A simple API built with http.server"}
+            info_msg = {
+                "version": "1.0",
+                "description": "A simple API built with http.server"
+            }
             self.wfile.write(json.dumps(info_msg).encode('utf-8'))
-        elif self.path == '/':
-            self.send_response(200)
-            self.send_header("Content-type", "text/plain")
-            self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
         else:
             self.send_error(404, "Not found")
             self.send_header("Content-type", "application/json")
@@ -43,6 +48,13 @@ class HTTPRequest(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(error_msg).encode('utf-8'))
 
 
-server = http.server.HTTPServer(('', PORT), HTTPRequest)
-server.serve_forever()
-server.server_close()
+if __name__ == "__main__":
+    server = http.server.HTTPServer(('', PORT), HTTPRequest)
+    print(f"Server running on port {PORT}")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nShutting down the server...")
+    finally:
+        server.server_close()
+        print("Server closed.")
