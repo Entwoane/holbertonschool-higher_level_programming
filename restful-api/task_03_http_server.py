@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""A simple HTTP server implementing a basic API."""
+"""
+A simple HTTP server implementing a basic API.
+"""
 import http.server
 import json
 
@@ -7,9 +9,13 @@ PORT = 8000
 
 
 class HTTPRequest(http.server.BaseHTTPRequestHandler):
-    """Handle HTTP requests for the API."""
+    """
+    Handle HTTP requests for the API.
+    """
     def do_GET(self):
-        """Process GET requests and return appropriate responses."""
+        """
+        Process GET requests and return appropriate responses.
+        """
         if self.path == '/':
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
@@ -48,13 +54,16 @@ class HTTPRequest(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(error_msg).encode('utf-8'))
 
 
+def run_server(server_class=http.server.HTTPServer,
+        handler_class=HTTPRequest, port=8000):
+    """
+    Run the HTTP server
+    """
+    server_address = ('', port)
+    httpd = server_class(server_address, handler_class)
+    print(f"Server running on port {port}")
+    httpd.serve_forever()
+
+
 if __name__ == "__main__":
-    server = http.server.HTTPServer(('', PORT), HTTPRequest)
-    print(f"Server running on port {PORT}")
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        print("\nShutting down the server...")
-    finally:
-        server.server_close()
-        print("Server closed.")
+    run_server()
