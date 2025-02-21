@@ -73,7 +73,7 @@ def login():
 
 
 @app.route("/jwt-protected", methods=['GET'])
-@jwt_required
+@jwt_required()
 def jwt_protected():
     """
     Protected route that requires a valid JWT token.
@@ -85,7 +85,7 @@ def jwt_protected():
 
 
 @app.route("/admin-only", methods=['GET'])
-@jwt_required
+@jwt_required()
 def admin_auth():
     """
     Admin-only route that requires a valid JWT token with admin role.
@@ -129,7 +129,7 @@ def handle_invalid_token_error(err):
 
 
 @jwt.expired_token_loader
-def handle_expired_token_error(err):
+def handle_expired_token_error(header, payload):
     """
     Handle expired token errors.
 
@@ -142,33 +142,5 @@ def handle_expired_token_error(err):
     return jsonify({"error": "Token has expired"}), 401
 
 
-@jwt.revoked_token_loader
-def handle_revoked_token_error(err):
-    """
-    Handle revoked token errors.
-
-    Args:
-        err: The error message from JWT.
-
-    Returns:
-        tuple: A JSON response with an error message and a 401 status code.
-    """
-    return jsonify({"error": "Token has been revoked"}), 401
-
-
-@jwt.needs_fresh_token_loader
-def handle_needs_fresh_token_error(err):
-    """
-    Handle errors when a fresh token is required.
-
-    Args:
-        err: The error message from JWT.
-
-    Returns:
-        tuple: A JSON response with an error message and a 401 status code.
-    """
-    return jsonify({"error": "Fresh token required"}), 401
-
-
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000)
