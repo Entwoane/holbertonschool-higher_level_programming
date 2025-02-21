@@ -36,7 +36,7 @@ def check_password(username, password):
         str: The username if authentication is successful, None otherwise.
     """
     if (username in users and
-            check_password_hash(users['username']['password'], password)):
+            check_password_hash(users[username]['password'], password)):
         return username
 
 
@@ -84,7 +84,7 @@ def jwt_protected():
     return "JWT Auth: Access Granted"
 
 
-@app.route("admin-only", methods=['GET'])
+@app.route("/admin-only", methods=['GET'])
 @jwt_required
 def admin_auth():
     """
@@ -94,10 +94,10 @@ def admin_auth():
         tuple: A JSON response with a success message or an error message,
                and the appropriate HTTP status code.
     """
-    current_user = get_jwt_identity
+    current_user = get_jwt_identity()
     if current_user.get("role") not in ["admin"]:
         return jsonify({"error": "Admin access required"}), 403
-    return "Admin Acces: Granted"
+    return "Admin Access: Granted"
 
 
 @jwt.unauthorized_loader
