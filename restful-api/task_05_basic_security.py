@@ -129,7 +129,7 @@ def handle_invalid_token_error(err):
 
 
 @jwt.expired_token_loader
-def handle_expired_token_error(header, payload):
+def handle_expired_token_error(err):
     """
     Handle expired token errors.
 
