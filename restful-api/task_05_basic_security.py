@@ -95,7 +95,7 @@ def admin_auth():
                and the appropriate HTTP status code.
     """
     current_user = get_jwt_identity()
-    if current_user.get("role") not in ["admin"]:
+    if users[current_user]['role'] != "admin":
         return jsonify({"error": "Admin access required"}), 403
     return "Admin Access: Granted"
 
