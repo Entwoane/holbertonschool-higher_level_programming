@@ -3,7 +3,8 @@
 Module to connect to a MySQL database and list all cities of a given state.
 
 Usage:
-    python3 script.py <mysql_username> <mysql_password> <database_name> <state_name>
+    python3 script.py <mysql_username> <mysql_password>
+    <database_name> <state_name>
 """
 import MySQLdb
 import sys
@@ -13,7 +14,8 @@ def main():
     """
     Main function to handle command line arguments and database operations.
 
-    Retrieves cities from the database for a given state name, ordered by ID, and prints them.
+    Retrieves cities from the database for a given state name
+    ordered by ID, and prints them.
     """
     if len(sys.argv) != 4:
         print("Usage: {} <mysql username> <mysql password>"
@@ -51,6 +53,7 @@ def main():
 
     cur.close()
     db.close()
+
 
 if __name__ == "__main__":
     main()
