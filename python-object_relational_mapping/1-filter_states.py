@@ -35,7 +35,8 @@ def main():
     )
 
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    query = "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    cur.execute(query)
     rows = cur.fetchall()
 
     for row in rows:
