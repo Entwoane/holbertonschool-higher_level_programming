@@ -26,8 +26,9 @@ def main():
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
-                           .format(username, password, database))
+    engine = create_engine(('mysql+mysqldb://%s:%s@localhost:3306/%s',
+                           username, password, database),
+                           pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
