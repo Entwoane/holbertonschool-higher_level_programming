@@ -26,15 +26,15 @@ def main():
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine("mysql+mysqldb://%s:%s@localhost:3306/%s",
-                           username, password, database)
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+                           .format(username, password, database))
     Session = sessionmaker(bind=engine)
     session = Session()
 
     states = session.query(State).order_by(State.id.asc()).all()
 
     for state in states:
-        print(state)
+        print(f"{state.id}: {state.name}")
 
 
 if __name__ == "__main__":
