@@ -17,7 +17,7 @@ def main():
     Retrieves cities from the database for a given state name
     ordered by ID, and prints them.
     """
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print("Usage: {} <mysql username> <mysql password>"
               "<database name> <state name>".format(sys.argv[0]))
         sys.exit(1)
@@ -47,8 +47,7 @@ def main():
 
     rows = cur.fetchall()
 
-    cities_name = [row[0] for row in rows]
-    print(', '.join(cities_name))
+    print(', '.join([row[0] for row in rows]))
 
     cur.close()
     db.close()
