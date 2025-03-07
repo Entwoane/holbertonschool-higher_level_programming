@@ -41,7 +41,7 @@ def main():
     rows = cur.fetchall()
 
     for row in rows:
-        print(f"({row[0]}, '{row[1]}')")
+        print(row)
 
     cur.close()
     db.close()
