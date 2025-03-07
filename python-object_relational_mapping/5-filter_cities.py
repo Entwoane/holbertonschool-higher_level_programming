@@ -35,6 +35,7 @@ def main():
         database=database_name,
     )
     cur = db.cursor()
+
     query = """
         SELECT cities.name
         FROM cities
@@ -46,10 +47,7 @@ def main():
 
     rows = cur.fetchall()
 
-    if rows:
-        print(', '.join([row[0] for row in rows]))
-    else:
-        pass
+    print(', '.join([row[0] for row in rows]))
 
     cur.close()
     db.close()
