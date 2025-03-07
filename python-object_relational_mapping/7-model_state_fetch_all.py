@@ -26,9 +26,8 @@ def main():
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine(('mysql+mysqldb://%s:%s@localhost:3306/%s',
-                           username, password, database),
-                           pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://%s:%s@localhost:3306/%s',
+                           username, password, database)
     Session = sessionmaker(bind=engine)
     session = Session()
 
@@ -37,6 +36,7 @@ def main():
     for state in states:
         print(f"{state.id}: {state.name}")
 
+    session.close()
 
 if __name__ == "__main__":
     main()
