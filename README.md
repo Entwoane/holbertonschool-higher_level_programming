@@ -7,20 +7,26 @@
 
 Three projects to dive into Python programming language. :snake:  
 
-
-- First project: [Hello, World](https://github.com/Entwoane/holbertonschool-higher_level_programming/tree/main/python-hello_world)  
+- 1: [Hello, World](https://github.com/Entwoane/holbertonschool-higher_level_programming/tree/main/python-hello_world)  
 Introduction to basic command: print  
 
 ```py
 print("Hello, World")
 ```  
 
-- Second Project: [if/else, loops, functions](https://github.com/Entwoane/holbertonschool-higher_level_programming/tree/main/python-if_else_loops_functions)
+- 2: [if/else, loops, functions](https://github.com/Entwoane/holbertonschool-higher_level_programming/tree/main/python-if_else_loops_functions)
   Introduction to basics uses of if, if...else statements, loops and functions
   ![code](https://s3.eu-west-3.amazonaws.com/hbtn.intranet.project.files/holbertonschool-higher-level_programming+/233/code.png)  
 
-- Third project: [import & modules]()
+- 3: [import & modules](https://github.com/Entwoane/holbertonschool-higher_level_programming/tree/main/python-import_modules)
   Learning how to import functions from another file, use imported functions and how to create a module
+
+- 4: [Data Structures: Lists, Tuples]()
+  Learning what are lists and how to use them, differences between lists and strings, what are tuples and how to use them and the usages of tuples versus lists. What is sequence unpacking. What is the **del()** statement and how to use it
+
+- 5: More Data Structures: Set, Dictionary
+- 6: Exceptions
+- 7: Test-driven development
 
 
 ## Requirements
