@@ -10,23 +10,13 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 import sys
 
-
-def main():
-    """
-    Main function to handle command line arguments and database operations.
-
-    Retrieves all states from the database, ordered by ID, and prints them.
-    """
-    if len(sys.argv) != 4:
-        print("Usage: {} <mysql username> <mysql password> <mysql database>"
-              .format(sys.argv[0]))
-        sys.exit(1)
+if __name__ == "__main__":
 
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
-    engine = create_engine('mysql+mysqldb://%s:%s@localhost:3306/%s',
+    engine = create_engine('mysql+pymysql://%s:%s@localhost:3306/%s',
                            username, password, database)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -37,6 +27,3 @@ def main():
         print(f"{state.id}: {state.name}")
 
     session.close()
-
-if __name__ == "__main__":
-    main()
