@@ -47,7 +47,8 @@ def main():
 
     rows = cur.fetchall()
 
-    print(', '.join([row[0] for row in rows]))
+    cities_name = [row[0] for row in rows]
+    print(', '.join(cities_name))
 
     cur.close()
     db.close()
