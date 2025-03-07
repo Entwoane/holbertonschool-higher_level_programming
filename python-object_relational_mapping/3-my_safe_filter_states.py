@@ -38,12 +38,12 @@ def main():
 
     cur = db.cursor()
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cur.execute(query, (state_name_searched))
+    cur.execute(query, (state_name_searched,))
 
     rows = cur.fetchall()
 
     for row in rows:
-        print(f"({row[0]}, '{row[1]}')")
+        print(row)
 
     cur.close()
     db.close()
