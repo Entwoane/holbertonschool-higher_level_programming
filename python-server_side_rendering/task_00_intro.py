@@ -30,7 +30,7 @@ def generate_invitations(template, attendees):
                 if value is None:
                     replacement = f"{key}: N/A"
                 else:
-                    replacement = value
+                    replacement = f"{key}: {value}"
                 processed = processed.replace(placeholder, replacement)
             filename = f"output_{index}.txt"
             if os.path.exists(filename):
