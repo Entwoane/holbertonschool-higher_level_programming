@@ -13,8 +13,7 @@ def generate_invitations(template, attendees):
         logging.error('Template is empty, no output files generated.')
         return
 
-    if not isinstance(attendees, (list) or
-                      not all(isinstance(item, dict) for item in attendees)):
+    if not isinstance(attendees, list) or not all(isinstance(item, dict) for item in attendees):
         logging.error('attendees must be a list of dict')
         return
     if not attendees:
