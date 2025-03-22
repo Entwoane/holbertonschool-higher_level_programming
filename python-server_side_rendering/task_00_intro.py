@@ -25,11 +25,8 @@ def generate_invitations(template, attendees):
             processed = template
             for key in ['name', 'event_title', 'event_date', 'event_location']:
                 placeholder = "{" + key + "}"
-                value = attendee.get(key)
-                if value is None:
-                    replacement = f"{key}: N/A"
-                else:
-                    replacement = f"{key}: {value}"
+                value = attendee.get(key, None)
+                replacement = f"{key}: N/A" if value is None else str(value)
                 processed = processed.replace(placeholder, replacement)
             filename = f"output_{index}.txt"
             if os.path.exists(filename):
