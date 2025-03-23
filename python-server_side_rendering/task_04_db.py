@@ -68,11 +68,11 @@ def products():
             conn = connect_db()
             cursor = conn.cursor()
             
-            query = "SELECT id, name, category, price FROM products"
+            query = "SELECT id, name, category, price FROM Products"
             params = ()
             
             if product_id:
-                query += 'WHERE id = ?'
+                query += ' WHERE id = ?'
                 params = (product_id,)
             
             cursor.execute(query, params)
@@ -87,7 +87,7 @@ def products():
     except FileNotFoundError:
         return render_template('product_display.html', error='Data file not found')
     except sqlite3.Error as e:
-        return render_template('products_display.html', error=f'Database error: {e}')
+        return render_template('product_display.html', error=f'Database error: {e}')
     except Exception as e:
         return render_template('product_display.html', error=f'Unexpected error: {e}')
 
