@@ -84,6 +84,10 @@ def products():
             for p in products:
                 p['id'] = str(p['id'])
                 p['price'] = str(p['price'])
+            
+            if source == 'sql' and product_id and not products:
+                return render_template('product_display.html', error='Product not found')
+            
     except FileNotFoundError:
         return render_template('product_display.html', error='Data file not found')
     except sqlite3.Error as e:
