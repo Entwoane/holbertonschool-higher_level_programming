@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask import json
+import json
 import os
 
 app = Flask(__name__)
@@ -16,12 +16,10 @@ def about():
 def contact():
     return render_template('contact.html')
 
-
-
 @app.route('/items')
 def items():
     with open('items.json', 'r') as f:
-        return json.load(f)
+        data = json.load(f)
     items = data.get('items', [])
     return render_template('items.html', items=items)
 
