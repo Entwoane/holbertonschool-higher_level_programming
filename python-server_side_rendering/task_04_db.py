@@ -27,6 +27,11 @@ def read_csv_file(csv_file):
             'price': row.get('price', 'N/A')
         } for row in reader]
 
+def connect_db():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    return conn
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -50,6 +55,7 @@ def items():
 def products():
     source = request.args.get('source')
     product_id = request.args.get('id', default=None)
+    products = []
 
     if source not in ['json', 'csv', 'sql']:
         return render_template('product_display.html', error='Wrong source.')
@@ -59,40 +65,36 @@ def products():
         elif source == 'csv':
             products = read_csv_file('products.csv')
         elif source == 'sql':
-            conn = sqlite3.connect(DATABASE)
+            conn = connect_db()
             cursor = conn.cursor()
-        
-        if product_id:
-            cursor.execute("SELECT id, name, category, price FROM products WHERE id = ?", (product_id,))
-        else:
-            cursor.execute("SELECT id, name, category, price FROM products")
-        
-        rows = cursor.fetchall()
-        conn.close()
-        
-        products = [{'id': str(row[0]), 'name': row[1], 'category': row[2], 'price': row[3]}
-                    for row in rows]
+            
+            query = "SELECT id, name, category, price FROM products"
+            params = ()
+            
+            if product_id:
+                query += 'WHERE id = ?'
+                params = (product_id,)
+            
+            cursor.execute(query, params)
+            rows = cursor.fetchall()
+            
+            conn.close()
+            products = [dict(row) for row in rows]
+            
+            for p in products:
+                p['id'] = str(p['id'])
+                p['price'] = str(p['price'])
     except FileNotFoundError:
         return render_template('product_display.html', error='Data file not found')
     except sqlite3.Error as e:
         return render_template('products_display.html', error=f'Database error: {e}')
+    except Exception as e:
+        return render_template('product_display.html', error=f'Unexpected error: {e}')
 
     if not products:
         return render_template('product_display.html', error='No products available')
     if any('id' not in p or not p['id'] for p in products):
         return render_template('product_display.html', error='Missing ID in some products')
-    
-    if product_id and source != 'sql':
-        target_id = str(product_id)
-        filtered_products = [
-            p for p in products 
-            if str(p.get('id')) == target_id
-        ]
-        
-        if not filtered_products:
-            return render_template('product_display.html', error='Product not found')
-            
-        return render_template('product_display.html', products=filtered_products)
 
     return render_template('product_display.html', products=products)
     
